@@ -5,12 +5,17 @@
     <title>Login</title>
   </head>
   <body>
-    <form class="login" action="/login" method="post">
+    {{#users}}
+      Hello {{username}}!
+    {{/users}}
+    {{^users}}
+    <form class="login" action="/" method="post">
         <h2>Username: </h2>
         <input type="text" name="username" placeholder="Enter Username">
         <h3>Password: </h3>
         <input type="password" name="password" placeholder="Enter Password">
         <button type="submit" name="button">Submit</button>
     </form>
+    {{/users}}
   </body>
 </html>
